@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme._225Demo1"
         tools:targetApi="31">
+        <activity
+            android:name=".AlarmManager1"
+            android:exported="true" />
+        <receiver
+            android:name=".AlarmManagerReceiver"
+            android:enabled="true"
+            android:exported="false"/>
+        <activity
+            android:name=".PendingIntentActivity"
+            android:exported="true" />
         <activity
             android:name=".Intent"
             android:exported="true" />
